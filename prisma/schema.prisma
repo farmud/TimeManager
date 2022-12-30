@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  email       String     @unique
+  userName    String     @map("user_name")
+  name        String
+  password    String
+  status      Int        @default(1)
+  createdTime DateTime   @default(now()) @map("create_time")
+  updatedTime DateTime   @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean    @default(false) @map("del_flag")
+  Plan        Plan[]
+  AOEPlan     AOEPlan[]
+  AOEGroup    AOEGroup[]
+  AOE         AOE[]
+}
+
+model IdentifyCode {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  code        String
+  createdTime DateTime @default(now()) @map("create_time")
+  updatedTime DateTime @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean  @default(false) @map("del_flag")
+}
+
+model Plan {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @map("user_id") @db.ObjectId
+  user        User     @relation(fields: [userId], references: [id])
+  name        String
+  startTime   DateTime @map("start_time")
+  endTime     DateTime @map("end_time")
+  status      Int      @default(0)
+  content     String
+  completed   Boolean  @default(false)
+  parentId    String?  @map("parent_id") @db.ObjectId
+  parent      Plan?    @relation("PlanToPlan", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children    Plan[]   @relation("PlanToPlan")
+  createdTime DateTime @default(now()) @map("create_time")
+  updatedTime DateTime @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean  @default(false) @map("del_flag")
+}
+
+model AOEPlan {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String    @map("user_id") @db.ObjectId
+  user        User      @relation(fields: [userId], references: [id])
+  name        String
+  content     String
+  groupId     String?   @map("group_id") @db.ObjectId
+  group       AOEGroup? @relation(fields: [groupId], references: [id])
+  createdTime DateTime  @default(now()) @map("create_time")
+  updatedTime DateTime  @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean   @default(false) @map("del_flag")
+}
+
+model AOEGroup {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String    @map("user_id") @db.ObjectId
+  user        User      @relation(fields: [userId], references: [id])
+  name        String
+  content     String
+  createdTime DateTime  @default(now()) @map("create_time")
+  updatedTime DateTime  @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean   @default(false) @map("del_flag")
+  AOEPlan     AOEPlan[]
+  AOE         AOE[]
+}
+
+model AOE {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @map("user_id") @db.ObjectId
+  user        User     @relation(fields: [userId], references: [id])
+  groupId     String   @map("group_id") @db.ObjectId
+  group       AOEGroup @relation(fields: [groupId], references: [id])
+  parentId    String   @map("parent_id") @db.ObjectId
+  childId     String   @map("child_id") @db.ObjectId
+  day         Int      @default(0)
+  hour        Int      @default(0)
+  content     String
+  createdTime DateTime @default(now()) @map("create_time")
+  updatedTime DateTime @default(now()) @updatedAt @map("update_time")
+  delFlag     Boolean  @default(false) @map("del_flag")
+}

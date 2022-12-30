@@ -1,0 +1,71 @@
+Arguments: 
+  D:\Nodejs\node.exe D:\Nodejs\node_global\node_modules\yarn\bin\yarn.js add react-toastify
+
+PATH: 
+  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;H:\SoftWare\python 3.11.0\Scripts\;H:\SoftWare\python 3.11.0\;H:\SoftWare\python 3.10.7\Scripts\;H:\SoftWare\python 3.10.7\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program F;les\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\Nodejs\;D:\Nodejs\node_global;C:\src\CLion 2021.3.2\bin\cmake\win\bin;D:\mingw64\bin;C:\Program Files (x86)\dotnet\;C:\src\nim-1.6.4;E:\IDE\Qt\5.14.2\mingw73_64\bin;F:\MatLab\runtime\win64;F:\MatLab\bin;F:\MatLab\polyspace\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Git LFS;C:\src\apache-tomcat-10.0.23\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files (x86)\EasyShare\x86\;C:\Program Files (x86)\EasyShare\x64\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\y\AppData\Local\Microsoft\WindowsApps;C:\Users\y\.dotnet\tools;C:\src\IntelliJ IDEA 2021.2.3\bin;C:\src\flutter\bin;C:\Users\y\AppData\Roaming\npm;C:\Users\y\AppData\Roaming\npm\node_modules;C:\src\apache-maven-3.8.4\bin;C:\src\CLion 2021.3.2\bin;C:\src\DataGrip 2021.3.4\bin;C:\src\PyCharm 2021.3.1\bin;C:\src\WebStorm 2021.3.1\bin;C:\src\GoLand 2021.3.3\bin;C:\src\CLion 2021.3.2\bin\mingw\bin;E:\IDE\Microsoft VS Code\bin;E:\IDE\PhpStorm 2021.3.3\bin;E:\IDE\JetBrains Rider 2021.3.4\bin;C:\Users\y\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\y\AppData\Local\Microsoft\WindowsApps;H:\SoftWare\Aria2;C:\Users\y\sdk\go1.19.2\bin;F:\IDEProjects\IdeaProjects\TimeManager\node_modules\.bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'F:\IDEProjects\IdeaProjects\TimeManager\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+      "build": "npm run build:css && remix build",
+      "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+      "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+      "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css"
+    },
+    "dependencies": {
+      "@prisma/client": "^4.6.1",
+      "@remix-run/node": "^1.7.6",
+      "@remix-run/react": "^1.7.6",
+      "@remix-run/vercel": "^1.7.6",
+      "@types/bcryptjs": "^2.4.2",
+      "@types/echarts": "^4.9.16",
+      "@types/nodemailer": "^6.4.6",
+      "@vercel/node": "^2.6.2",
+      "bcryptjs": "^2.4.3",
+      "daisyui": "^2.41.0",
+      "echarts": "^5.4.0",
+      "echarts-for-react": "^3.0.2",
+      "nodemailer": "^6.8.0",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-toastify": "^9.1.1"
+    },
+    "devDependencies": {
+      "@remix-run/dev": "^1.7.6",
+      "@remix-run/eslint-config": "^1.7.6",
+      "@remix-run/serve": "^1.7.6",
+      "@tailwindcss/typography": "^0.5.8",
+      "@types/react": "^18.0.25",
+      "@types/react-dom": "^18.0.8",
+      "autoprefixer": "^10.4.13",
+      "concurrently": "^7.5.0",
+      "eslint": "^8.27.0",
+      "postcss": "^8.4.19",
+      "prisma": "^4.6.1",
+      "tailwindcss": "^3.2.4",
+      "typescript": "^4.8.4"
+    },
+    "engines": {
+      "node": ">=14"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

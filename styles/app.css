@@ -1,0 +1,86 @@
+/*noinspection CssInvalidAtRule*/
+@tailwind base;
+/*noinspection CssInvalidAtRule*/
+@tailwind components;
+/*noinspection CssInvalidAtRule*/
+@tailwind utilities;
+.container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.container2 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* justify-content: space-around; */
+}
+
+.comtainer3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.roomlist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*  */
+.avator-holder {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.cover-block {
+    width: 100vh;
+    height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+.user-info {
+
+}
+
+.cover-title {
+    font-size: 23px;
+    margin: 3vh;
+}
+
+.history th {
+    font-size: large;
+}
+
+.navbar-first {
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.match-table th {
+    font-size: large;
+}
+
+.over-flow-visible {
+    overflow: visible;
+}
+
+.form-size {
+    width: 80vh;
+    height: 60vh;
+}
+
+/*  */
